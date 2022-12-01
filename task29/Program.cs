@@ -7,6 +7,33 @@
 
 //  ----------------------------------- START
 
+int[] FillArray(int size)
+{
+    int[] arr = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = new Random().Next(100);
+    }
+    return arr;
+}
 
+void PrintArray(int[] arr)
+{
+    Console.Write("Массив: [");      //красивый вывод
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (i == arr.Length - 1) Console.Write(arr[i]); // на последнем элементе убрать запятую после
+        else Console.Write($"{arr[i]}, ");
+    }
+    Console.Write("]");              //красивый вывод
+}
+
+// ---------- Исполнение ----------------
+Console.Clear();
+Console.WriteLine("Нажмите Enter для заполнения массива рандомными значениями от 0 до 99 включительно...");
+Console.ReadLine();
+int size = 8; // Здесь "магическое число" обусловлено задачей.
+int[] array = FillArray(size);
+PrintArray(array);
 
 //  --------------------------------------END
